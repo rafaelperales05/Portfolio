@@ -9,7 +9,7 @@ const ContactPage: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      style={{ minHeight: '100vh', paddingTop: '80px' }}
+      style={{ minHeight: '100vh', paddingTop: '5rem' }}
     >
       <Contact />
     </motion.div>

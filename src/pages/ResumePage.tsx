@@ -102,7 +102,7 @@ const ResumePage: React.FC = () => {
         className="resume-section"
         style={{ 
           minHeight: '100vh', 
-          paddingTop: '120px', 
+          paddingTop: '7.5rem', 
           background: 'var(--bg-primary)',
           color: 'var(--text-primary)'
         }}

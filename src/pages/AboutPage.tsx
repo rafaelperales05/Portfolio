@@ -46,7 +46,7 @@ const AboutPage: React.FC = () => {
         className="about-section"
         style={{ 
           minHeight: '100vh', 
-          paddingTop: '120px', 
+          paddingTop: '7.5rem', 
           background: 'var(--bg-primary)',
           color: 'var(--text-primary)'
         }}
