@@ -18,9 +18,9 @@ const ProjectsPage: React.FC = () => {
     {
       id: 2,
       title: "Retro Bowl Remake",
-      description: "Recreation of the popular football game on MSMP0+ microcontroller hardware using embedded C programming. Features PCB design, joystick controls, LED displays, and sound generation.",
+      description: "Recreation of the popular football game on MSMP0+ microcontroller hardware using embedded C programming. Features PCB design, joystick controls, LED displays, and sound generation. (wasn't using git at the time :()",
       technologies: ["C", "KiCAD", "Embedded Systems", "Hardware Design", "State Machines"],
-      githubUrl: "https://youtu.be/C3qR12QKr7w",
+      githubUrl: "#",
       liveUrl: "https://youtu.be/C3qR12QKr7w",
       category: "hardware"
     },
@@ -206,28 +206,32 @@ const ProjectsPage: React.FC = () => {
                     ))}
                   </motion.div>
                   <div className="project-links" style={{ display: 'flex', gap: '1rem' }}>
-                    <motion.a 
-                      href={project.githubUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="btn-secondary"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      style={{ flex: 1, textAlign: 'center' }}
-                    >
-                      GitHub
-                    </motion.a>
-                    <motion.a 
-                      href={project.liveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="btn-primary"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      style={{ flex: 1, textAlign: 'center' }}
-                    >
-                      Live Demo
-                    </motion.a>
+                    {project.githubUrl !== "#" && (
+                      <motion.a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="btn-secondary"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        style={{ flex: 1, textAlign: 'center' }}
+                      >
+                        GitHub
+                      </motion.a>
+                    )}
+                    {project.liveUrl !== "#" && (
+                      <motion.a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        style={{ flex: 1, textAlign: 'center' }}
+                      >
+                        Live Demo
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </motion.div>
