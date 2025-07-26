@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Session memory files (do not commit)
+/session-memory/
+session-memory/
+*.session.md
+*-session-*.md

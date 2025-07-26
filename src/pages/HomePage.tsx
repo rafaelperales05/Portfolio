@@ -13,12 +13,6 @@ const HomePage: React.FC = () => {
     }
   };
 
-  const stats = [
-    { number: "3+", label: "Years Experience" },
-    { number: "50+", label: "Projects Completed" },
-    { number: "10+", label: "Technologies" },
-    { number: "100%", label: "Client Satisfaction" }
-  ];
 
   return (
     <motion.div
@@ -29,6 +23,12 @@ const HomePage: React.FC = () => {
     >
       <motion.header 
         className="hero"
+        style={{ 
+          minHeight: '100vh', 
+          paddingTop: '120px', 
+          background: 'var(--bg-primary)',
+          color: 'var(--text-primary)'
+        }}
         initial="initial"
         animate="animate"
         variants={heroVariants}
@@ -39,25 +39,47 @@ const HomePage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
+              style={{ 
+                fontSize: '4rem', 
+                marginBottom: '1rem',
+                background: 'var(--gradient-primary)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
             >
-              John Doe
+              Rafael Perales
             </motion.h1>
             <motion.p 
               className="hero-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
+              style={{ 
+                fontSize: '1.5rem', 
+                color: 'var(--accent-primary)', 
+                marginBottom: '1rem',
+                fontWeight: '600'
+              }}
             >
-              Full Stack Developer
+              Electrical & Computer Engineering Student
             </motion.p>
             <motion.p 
               className="hero-description"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
+              style={{ 
+                fontSize: '1.2rem', 
+                color: 'var(--text-secondary)', 
+                marginBottom: '2rem',
+                lineHeight: '1.6',
+                maxWidth: '600px',
+                margin: '0 auto 2rem'
+              }}
             >
-              I create modern, responsive web applications that deliver exceptional user experiences. 
-              Passionate about clean code, innovative solutions, and cutting-edge technologies.
+              Passionate about data science, machine learning, and building innovative solutions. 
+              Currently pursuing my ECE degree at UT Austin while gaining real-world experience in technology and finance.
             </motion.p>
             <motion.div 
               className="hero-actions"
@@ -69,73 +91,36 @@ const HomePage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/projects" className="btn btn-primary">
+                <Link 
+                  to="/projects" 
+                  className="btn btn-primary"
+                  style={{ 
+                    color: 'var(--text-primary)',
+                    fontWeight: '600'
+                  }}
+                >
                   🚀 View My Work
                 </Link>
               </motion.div>
               <motion.a 
-                href="/resume.pdf" 
-                download 
+                href="https://docs.google.com/document/d/1xbEcM3RewD0nwPSV-XJOu06UBAGxmEKQS2x7u8Kd4b0/edit?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                style={{ 
+                  color: 'var(--text-primary)',
+                  fontWeight: '600'
+                }}
               >
-                📄 Download Resume
+                📄 View Resume
               </motion.a>
             </motion.div>
 
-            {/* Stats Section */}
-            <motion.div 
-              className="hero-stats"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.6 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="stat-item"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <span className="stat-number">{stat.number}</span>
-                  <span className="stat-label">{stat.label}</span>
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
-        <motion.div 
-          className="scroll-indicator"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 0.6 }}
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-        >
-          <span className="scroll-text">Scroll Down</span>
-          <motion.div
-            className="scroll-arrow"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <motion.path
-                d="M7 10L12 15L17 10"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 0.8, delay: 2.5 }}
-              />
-            </svg>
-          </motion.div>
-        </motion.div>
       </motion.header>
     </motion.div>
   );

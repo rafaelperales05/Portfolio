@@ -5,7 +5,7 @@
 .projects-section {
   min-height: 100vh;
   padding: var(--space-4xl) 0;
-  background: var(--color-bg-primary);
+  background: var(--bg-primary) !important;
   position: relative;
 }
 

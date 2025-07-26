@@ -11,48 +11,86 @@ const ResumePage: React.FC = () => {
 
   const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      description: "Lead development of web applications using React, Node.js, and cloud technologies. Mentored junior developers and implemented CI/CD pipelines.",
+      title: "Early Business Analyst Intern",
+      company: "Capital One",
+      location: "Mcclean, Virginia",
+      period: "June 2025 - August 2025",
+      description: "Built machine learning models for credit card forecasting and enhanced decision-making processes through data analysis and model optimization.",
       achievements: [
-        "Increased application performance by 40%",
-        "Led a team of 5 developers",
-        "Implemented automated testing reducing bugs by 60%"
+        "Built an early-stage machine learning model in Python with scikit-learn to reforecast 24th credit card statement-level metrics using the first 6 months of customer data",
+        "Increased previous model R² by 20% and decreased monthly relative mean error by 10%",
+        "Extracted, cleaned, and joined large-scale datasets from Snowflake using SQL for feature engineering, model training, and validation",
+        "Performed exploratory data analysis and developed visualizations in Jupyter Notebooks and Google Sheets to uncover behavioral trends and creditworthiness indicators"
       ]
     },
     {
-      title: "Full Stack Developer",
-      company: "StartupXYZ",
-      period: "2021 - 2022",
-      description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.",
+      title: "Consultant II",
+      company: "Enterprise Technology at UT Austin",
+      location: "Austin, Texas",
+      period: "May 2024 - Present",
+      description: "Provided comprehensive IT support services and technical troubleshooting for university systems and users.",
       achievements: [
-        "Built 10+ responsive web applications",
-        "Improved SEO rankings by 200%",
-        "Integrated payment systems and APIs"
+        "Provided first-level contact, incident handling, and IT services support",
+        "Logged incidents, requests, and resolutions accurately and promptly in the incident management system",
+        "Resolved a daily average of 20+ user-reported problems using advanced troubleshooting skills and available tools while following established procedures and policies"
+      ]
+    }
+  ];
+
+  const leadership = [
+    {
+      title: "Electrical Lead",
+      organization: "NASA L'SPACE Research Team",
+      period: "Jan 2025 - Present",
+      description: "Led electrical systems design and development for innovative solar sail technology research project.",
+      achievements: [
+        "Conducted a literature review to form initial proof of concepts for improving current solar sail technology",
+        "Collaborated with the mechanical team to design and develop the electrical power systems as well as the command and data handling systems",
+        "Collaborated with 6 other leads to create weekly meeting and event agendas"
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency Co.",
-      period: "2020 - 2021",
-      description: "Created responsive websites and web applications for various clients. Focused on performance optimization and user experience.",
+      title: "Member",
+      organization: "Society of Hispanic Professional Engineers (SHPE)",
+      period: "August 2024 - Present",
+      description: "Active participant in professional development and engineering career advancement initiatives.",
       achievements: [
-        "Delivered 20+ client projects on time",
-        "Reduced page load times by 50%",
-        "Implemented accessibility best practices"
+        "Participate in technical workshops and engineering career development programs",
+        "Engage with industry professionals and alumni network to gain insights into engineering careers",
+        "Contribute to community outreach programs promoting STEM education in underrepresented communities"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "\"Retro Bowl\" Remake Project",
+      period: "January 2024 - May 2024",
+      description: "Recreated a popular football game on microcontroller hardware using embedded C programming.",
+      achievements: [
+        "Recreated aspects of \"Retro-bowl\", a popular Football game, on an MSMP0+ microcontroller using C",
+        "Used KiCAD to create a PCB and then interfaced an ADC joystick, buttons, LED lights, and an ST7735R LCD screen",
+        "Used a state machine, timers, interrupts, and a priority cycle to recreate basic features of a football game, such as running and passing a football, making tackles, and making touchdowns",
+        "Used a 5-bit DAC to create sound such as players being tackled and the quarterback yelling \"HUT\""
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      period: "2016 - 2020",
-      details: "Graduated Cum Laude with focus on Software Engineering and Web Development"
+      degree: "Bachelor of Electrical and Computer Engineering, Data Science",
+      school: "The University of Texas at Austin",
+      period: "Expected May 2027",
+      details: "Overall GPA: 3.60"
     }
   ];
+
+  const skills = {
+    "Programming Languages": ["C", "C++", "Python", "SQL"],
+    "Tools & Technologies": ["Jupyter Notebooks", "Snowflake", "Git", "Github", "KiCAD", "LTSPICE", "scikit-learn"],
+    "Software": ["Google Suite (Sheets, Slides)", "Microsoft Suite (Excel, PowerPoint)"],
+    "Languages": ["English (Fluent)", "Spanish (Conversational)"]
+  };
 
   return (
     <motion.div
@@ -63,40 +101,104 @@ const ResumePage: React.FC = () => {
     >
       <motion.section 
         className="resume-section"
-        style={{ minHeight: '100vh', paddingTop: '120px', background: 'white' }}
+        style={{ 
+          minHeight: '100vh', 
+          paddingTop: '120px', 
+          background: 'var(--bg-primary)',
+          color: 'var(--text-primary)'
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
         <div className="container">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '2rem' }}
-          >
-            Resume
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             style={{ textAlign: 'center', marginBottom: '3rem' }}
           >
-            <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '2rem' }}>
-              Download my complete resume or explore my experience below
-            </p>
+            <h1 style={{ 
+              fontSize: '3.5rem', 
+              marginBottom: '1rem',
+              background: 'var(--gradient-primary)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              Rafael Perales
+            </h1>
+            <div style={{ 
+              fontSize: '1.2rem', 
+              color: 'var(--text-secondary)', 
+              marginBottom: '2rem',
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: '2rem'
+            }}>
+              <span>📧 rafaperales1229@gmail.com</span>
+              <span>📱 (956) 203-4369</span>
+              <span>🔗 www.linkedin.com/in/rafaelperales2027</span>
+            </div>
             <motion.a 
-              href="/resume.pdf" 
-              download 
+              href="https://docs.google.com/document/d/1xbEcM3RewD0nwPSV-XJOu06UBAGxmEKQS2x7u8Kd4b0/edit?usp=sharing" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 30px var(--accent-primary)' }}
               whileTap={{ scale: 0.95 }}
-              style={{ display: 'inline-block', padding: '1rem 2rem', fontSize: '1.1rem' }}
+              style={{ 
+                display: 'inline-block', 
+                padding: '1rem 2rem', 
+                fontSize: '1.1rem',
+                background: 'var(--gradient-primary)',
+                color: 'var(--bg-primary)',
+                border: 'none',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                fontWeight: '600'
+              }}
             >
-              Download PDF Resume
+              📄 View Google Doc Resume
             </motion.a>
+          </motion.div>
+
+          {/* Education Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ marginBottom: '4rem' }}
+          >
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              marginBottom: '2rem', 
+              color: 'var(--accent-primary)',
+              textAlign: 'center'
+            }}>
+              🎓 Education
+            </h2>
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02, y: -5 }}
+                style={{
+                  padding: '2rem',
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--glass-border)',
+                  marginBottom: '2rem',
+                  boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
+                }}
+              >
+                <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.5rem' }}>{edu.degree}</h3>
+                <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>{edu.school}</h4>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem', fontStyle: 'italic' }}>{edu.period}</p>
+                <p style={{ color: 'var(--accent-secondary)', fontWeight: '600' }}>{edu.details}</p>
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Experience Section */}
@@ -106,16 +208,22 @@ const ResumePage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             style={{ marginBottom: '4rem' }}
           >
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#2d3748' }}>Experience</h2>
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              marginBottom: '2rem', 
+              color: 'var(--accent-primary)',
+              textAlign: 'center'
+            }}>
+              💼 Experience
+            </h2>
             <div style={{ position: 'relative' }}>
-              {/* Timeline line */}
               <div style={{ 
                 position: 'absolute', 
                 left: '20px', 
                 top: '0', 
                 bottom: '0', 
                 width: '2px', 
-                background: '#4a90e2' 
+                background: 'var(--gradient-primary)' 
               }} />
               
               {experience.map((job, index) => (
@@ -125,39 +233,42 @@ const ResumePage: React.FC = () => {
                   initial="initial"
                   animate="animate"
                   transition={{ delay: 0.6 + index * 0.2 }}
+                  whileHover={{ scale: 1.02, x: 10 }}
                   style={{
                     position: 'relative',
                     marginLeft: '60px',
                     marginBottom: '3rem',
                     padding: '2rem',
-                    background: '#f8f9fa',
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
+                    background: 'var(--glass-bg)',
+                    backdropFilter: 'blur(10px)',
+                    borderRadius: '16px',
+                    border: '1px solid var(--glass-border)',
+                    boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
                   }}
                 >
-                  {/* Timeline dot */}
                   <div style={{
                     position: 'absolute',
                     left: '-46px',
                     top: '2rem',
                     width: '12px',
                     height: '12px',
-                    background: '#4a90e2',
+                    background: 'var(--accent-primary)',
                     borderRadius: '50%',
-                    border: '3px solid white',
-                    boxShadow: '0 0 0 3px #4a90e2'
+                    border: '3px solid var(--bg-primary)',
+                    boxShadow: '0 0 0 3px var(--accent-primary)'
                   }} />
                   
-                  <h3 style={{ color: '#2d3748', marginBottom: '0.5rem' }}>{job.title}</h3>
-                  <h4 style={{ color: '#4a90e2', marginBottom: '0.5rem' }}>{job.company}</h4>
-                  <p style={{ color: '#666', marginBottom: '1rem', fontStyle: 'italic' }}>{job.period}</p>
-                  <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>{job.description}</p>
+                  <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.4rem' }}>{job.title}</h3>
+                  <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>{job.company}</h4>
+                  {job.location && <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>📍 {job.location}</p>}
+                  <p style={{ color: 'var(--accent-secondary)', marginBottom: '1rem', fontStyle: 'italic' }}>{job.period}</p>
+                  <p style={{ marginBottom: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>{job.description}</p>
                   
                   <div>
-                    <strong style={{ color: '#2d3748' }}>Key Achievements:</strong>
+                    <strong style={{ color: 'var(--accent-primary)' }}>Key Achievements:</strong>
                     <ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem' }}>
                       {job.achievements.map((achievement, idx) => (
-                        <li key={idx} style={{ marginBottom: '0.25rem', color: '#4a5568' }}>
+                        <li key={idx} style={{ marginBottom: '0.5rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                           {achievement}
                         </li>
                       ))}
@@ -168,31 +279,223 @@ const ResumePage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Education Section */}
+          {/* Leadership & Activities Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            style={{ marginBottom: '4rem' }}
+          >
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              marginBottom: '2rem', 
+              color: 'var(--accent-primary)',
+              textAlign: 'center'
+            }}>
+              🌟 Leadership & Activities
+            </h2>
+            {leadership.map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02, y: -5 }}
+                style={{
+                  padding: '2rem',
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--glass-border)',
+                  marginBottom: '2rem',
+                  boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
+                }}
+              >
+                <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.4rem' }}>{item.title}</h3>
+                <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>{item.organization}</h4>
+                <p style={{ color: 'var(--accent-secondary)', marginBottom: '1rem', fontStyle: 'italic' }}>{item.period}</p>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>{item.description}</p>
+                
+                <div>
+                  <strong style={{ color: 'var(--accent-primary)' }}>Key Contributions:</strong>
+                  <ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem' }}>
+                    {item.achievements.map((achievement, idx) => (
+                      <li key={idx} style={{ marginBottom: '0.5rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Projects Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
+            style={{ marginBottom: '4rem' }}
           >
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#2d3748' }}>Education</h2>
-            {education.map((edu, index) => (
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              marginBottom: '2rem', 
+              color: 'var(--accent-primary)',
+              textAlign: 'center'
+            }}>
+              🚀 Projects
+            </h2>
+            {projects.map((project, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: -5 }}
                 style={{
                   padding: '2rem',
-                  background: '#f8f9fa',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-                  marginBottom: '2rem'
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--glass-border)',
+                  marginBottom: '2rem',
+                  boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
                 }}
               >
-                <h3 style={{ color: '#2d3748', marginBottom: '0.5rem' }}>{edu.degree}</h3>
-                <h4 style={{ color: '#4a90e2', marginBottom: '0.5rem' }}>{edu.school}</h4>
-                <p style={{ color: '#666', marginBottom: '1rem', fontStyle: 'italic' }}>{edu.period}</p>
-                <p style={{ color: '#4a5568', lineHeight: '1.6' }}>{edu.details}</p>
+                <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.4rem' }}>{project.title}</h3>
+                <p style={{ color: 'var(--accent-secondary)', marginBottom: '1rem', fontStyle: 'italic' }}>{project.period}</p>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>{project.description}</p>
+                
+                <div>
+                  <strong style={{ color: 'var(--accent-primary)' }}>Technical Implementation:</strong>
+                  <ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem' }}>
+                    {project.achievements.map((achievement, idx) => (
+                      <li key={idx} style={{ marginBottom: '0.5rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Skills Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            style={{ marginBottom: '4rem' }}
+          >
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              marginBottom: '2rem', 
+              color: 'var(--accent-primary)',
+              textAlign: 'center'
+            }}>
+              🛠️ Technical Skills
+            </h2>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '2rem' 
+            }}>
+              {Object.entries(skills).map(([category, skillList], index) => (
+                <motion.div
+                  key={category}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  style={{
+                    padding: '2rem',
+                    background: 'var(--glass-bg)',
+                    backdropFilter: 'blur(10px)',
+                    borderRadius: '16px',
+                    border: '1px solid var(--glass-border)',
+                    boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)'
+                  }}
+                >
+                  <h3 style={{ 
+                    color: 'var(--accent-primary)', 
+                    marginBottom: '1rem', 
+                    fontSize: '1.3rem',
+                    textAlign: 'center'
+                  }}>
+                    {category}
+                  </h3>
+                  <div style={{ 
+                    display: 'flex', 
+                    flexWrap: 'wrap', 
+                    gap: '0.5rem',
+                    justifyContent: 'center'
+                  }}>
+                    {skillList.map((skill, idx) => (
+                      <span
+                        key={idx}
+                        style={{
+                          padding: '0.5rem 1rem',
+                          background: 'rgba(0, 212, 255, 0.1)',
+                          border: '1px solid var(--accent-primary)',
+                          borderRadius: '20px',
+                          color: 'var(--text-primary)',
+                          fontSize: '0.9rem',
+                          fontWeight: '500'
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Additional Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            style={{ marginBottom: '4rem' }}
+          >
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+              gap: '2rem' 
+            }}>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                style={{
+                  padding: '2rem',
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--glass-border)',
+                  boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+                  textAlign: 'center'
+                }}
+              >
+                <h3 style={{ color: 'var(--accent-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}>
+                  🎯 Interests
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                  Basketball • Trumpet Playing • Data Science & Advancing Technology • Music • FinTech
+                </p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                style={{
+                  padding: '2rem',
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--glass-border)',
+                  boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+                  textAlign: 'center'
+                }}
+              >
+                <h3 style={{ color: 'var(--accent-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}>
+                  📋 Additional
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                  <strong>Organizations:</strong> Society of Hispanic Professional Engineers (SHPE), SEO Career Scholar<br />
+                  <strong>Work Eligibility:</strong> Eligible to work in the U.S. with no restrictions
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
