@@ -46,11 +46,21 @@
   color: #4a5568;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: block;
 }
 
 .nav-links li a:hover {
   color: #2b6cb0;
+  background: rgba(43, 108, 176, 0.1);
+}
+
+.nav-links li a.active {
+  color: #2b6cb0;
+  background: rgba(43, 108, 176, 0.15);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

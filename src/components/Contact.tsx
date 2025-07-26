@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Contact.css';
 
 const Contact: React.FC = () => {
@@ -7,6 +8,20 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -25,71 +40,159 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="contact-section" data-testid="contact-section">
+    <motion.section 
+      id="contact" 
+      className="contact-section" 
+      data-testid="contact-section"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="container">
-        <h2>Get In Touch</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Get In Touch
+        </motion.h2>
         <div className="contact-content">
-          <div className="contact-info">
+          <motion.div 
+            className="contact-info"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3>Let's Connect</h3>
             <p>I'm always interested in new opportunities and collaborations.</p>
             
-            <div className="social-links">
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                Twitter
-              </a>
-            </div>
-          </div>
+            <motion.div 
+              className="social-links"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <motion.a 
+                href="https://linkedin.com/in/yourprofile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                📋 LinkedIn
+              </motion.a>
+              <motion.a 
+                href="https://github.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                🐙 GitHub
+              </motion.a>
+              <motion.a 
+                href="https://twitter.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                🐦 Twitter
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
+          <motion.form 
+            className="contact-form" 
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="form-group"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <label htmlFor="name">👤 Name</label>
+              <motion.input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
+                whileFocus={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               />
-            </div>
+            </motion.div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
+            <motion.div 
+              className="form-group"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <label htmlFor="email">📧 Email</label>
+              <motion.input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
+                whileFocus={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               />
-            </div>
+            </motion.div>
 
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
+            <motion.div 
+              className="form-group"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <label htmlFor="message">✉️ Message</label>
+              <motion.textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
                 required
+                whileFocus={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               />
-            </div>
+            </motion.div>
 
-            <button type="submit" className="submit-btn">
-              Send Message
-            </button>
-          </form>
+            <motion.button 
+              type="submit" 
+              className="submit-btn"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              🚀 Send Message
+            </motion.button>
+          </motion.form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,0 +1,73 @@
+.svg-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.svg-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.svg-divider.wave-top {
+  transform: rotate(180deg);
+}
+
+.svg-divider.wave-bottom {
+  margin-top: -1px;
+}
+
+.svg-divider.blob-divider {
+  color: #f8f9fa;
+}
+
+.svg-divider.wave-divider {
+  color: #ffffff;
+}
+
+.svg-divider.geometric-divider {
+  color: #4a90e2;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .svg-divider svg {
+    height: 40px;
+  }
+  
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+  
+  .scroll-arrow {
+    width: 32px;
+    height: 32px;
+  }
+}

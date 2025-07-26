@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 import Navigation from './Navigation';
+
+const renderWithRouter = (component: React.ReactElement) => {
+  return render(<BrowserRouter>{component}</BrowserRouter>);
+};
 
 describe('Navigation', () => {
   test('renders all navigation links', () => {
-    render(<Navigation />);
+    renderWithRouter(<Navigation />);
     
     expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument();
@@ -13,19 +18,19 @@ describe('Navigation', () => {
     expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
   });
 
-  test('navigation links scroll to correct sections', async () => {
+  test('navigation links navigate to correct routes', async () => {
     const user = userEvent.setup();
-    render(<Navigation />);
+    renderWithRouter(<Navigation />);
     
     const aboutLink = screen.getByRole('link', { name: /about/i });
     await user.click(aboutLink);
     
-    // Test that clicking about link triggers scroll behavior
-    expect(aboutLink).toHaveAttribute('href', '#about');
+    // Test that clicking about link has correct href
+    expect(aboutLink).toHaveAttribute('href', '/about');
   });
 
   test('navigation is responsive', () => {
-    render(<Navigation />);
+    renderWithRouter(<Navigation />);
     
     // Check for mobile menu toggle button
     const menuButton = screen.getByRole('button', { name: /menu/i });
