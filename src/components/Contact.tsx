@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
-      }}
+      } as any}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             textAlign: 'center'
-          }}
+          } as any}
         >
           📬 Get In Touch
         </motion.h2>
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          style={{ textAlign: 'center', marginBottom: '3rem' }}
+          style={{ textAlign: 'center', marginBottom: '3rem' } as any}
         >
           <p style={{ 
             fontSize: '1.2rem', 
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
             justifyContent: 'center', 
             gap: '2rem',
             flexWrap: 'wrap'
-          }}
+          } as any}
         >
           <motion.a 
             href="https://www.linkedin.com/in/rafaelperales2027" 
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
               padding: '1rem 2rem',
               fontSize: '1.1rem',
               fontWeight: '600'
-            }}
+            } as any}
           >
             🔗 LinkedIn
           </motion.a>
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
               padding: '1rem 2rem',
               fontSize: '1.1rem',
               fontWeight: '600'
-            }}
+            } as any}
           >
             🐙 GitHub
           </motion.a>
