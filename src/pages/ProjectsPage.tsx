@@ -8,6 +8,15 @@ const ProjectsPage: React.FC = () => {
   const projects = [
     {
       id: 1,
+      title: "Credit Card Forecasting ML Model",
+      description: "Built machine learning models for credit card statement-level metrics forecasting at Capital One. Improved model R² by 20% and decreased monthly relative mean error by 10%.",
+      technologies: ["Python", "scikit-learn", "Snowflake", "SQL", "Jupyter Notebooks"],
+      githubUrl: "#",
+      liveUrl: "#",
+      category: "datascience"
+    },
+    {
+      id: 2,
       title: "Personal Portfolio Website",
       description: "A modern, responsive portfolio website built with React and TypeScript featuring dark theme, smooth animations, and multi-page navigation. Showcases personal projects and professional experience.",
       technologies: ["React", "TypeScript", "Framer Motion", "React Router", "CSS3"],
@@ -16,22 +25,13 @@ const ProjectsPage: React.FC = () => {
       category: "frontend"
     },
     {
-      id: 2,
+      id: 3,
       title: "Retro Bowl Remake",
       description: "Recreation of the popular football game on MSMP0+ microcontroller hardware using embedded C programming. Features PCB design, joystick controls, LED displays, and sound generation. (wasn't using git at the time :()",
       technologies: ["C", "KiCAD", "Embedded Systems", "Hardware Design", "State Machines"],
       githubUrl: "#",
       liveUrl: "https://youtu.be/C3qR12QKr7w",
       category: "hardware"
-    },
-    {
-      id: 3,
-      title: "Credit Card Forecasting ML Model",
-      description: "Built machine learning models for credit card statement-level metrics forecasting at Capital One. Improved model R² by 20% and decreased monthly relative mean error by 10%.",
-      technologies: ["Python", "scikit-learn", "Snowflake", "SQL", "Jupyter Notebooks"],
-      githubUrl: "#",
-      liveUrl: "#",
-      category: "datascience"
     },
     {
       id: 4,

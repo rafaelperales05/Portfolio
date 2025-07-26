@@ -43,7 +43,7 @@ const Navigation: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <Link to="/">Portfolio</Link>
+          <Link to="/">RP</Link>
         </motion.div>
         
         <motion.button 

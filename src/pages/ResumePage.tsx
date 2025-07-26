@@ -88,8 +88,7 @@ const ResumePage: React.FC = () => {
   const skills = {
     "Programming Languages": ["C", "C++", "Python", "SQL"],
     "Tools & Technologies": ["Jupyter Notebooks", "Snowflake", "Git", "Github", "KiCAD", "LTSPICE", "scikit-learn"],
-    "Software": ["Google Suite (Sheets, Slides)", "Microsoft Suite (Excel, PowerPoint)"],
-    "Languages": ["English (Fluent)", "Spanish (Conversational)"]
+    "Software": ["Google Suite (Sheets, Slides)", "Microsoft Suite (Excel, PowerPoint)"]
   };
 
   return (
