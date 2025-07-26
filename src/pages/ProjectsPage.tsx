@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import '../components/Portfolio.css';
+import './ProjectsPage.css';
 
 const ProjectsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -104,32 +104,16 @@ const ProjectsPage: React.FC = () => {
 
           {/* Category Filter */}
           <motion.div
+            className="filter-buttons"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ 
-              display: 'flex', 
-              justifyContent: 'center', 
-              gap: '1rem', 
-              marginBottom: '3rem',
-              flexWrap: 'wrap'
-            }}
           >
             {categories.map((category) => (
               <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  border: 'none',
-                  borderRadius: '25px',
-                  background: selectedCategory === category.id ? '#4a90e2' : '#f0f0f0',
-                  color: selectedCategory === category.id ? 'white' : '#333',
-                  cursor: 'pointer',
-                  fontWeight: '500',
-                  transition: 'all 0.3s ease'
-                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

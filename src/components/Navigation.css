@@ -3,35 +3,66 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e1e5e9;
-  z-index: 1000;
+  background: rgba(10, 11, 20, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: var(--z-fixed);
+  transition: all var(--transition-normal);
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  opacity: 0.3;
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: var(--space-lg) var(--space-xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2d3748;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   text-decoration: none;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all var(--transition-normal);
+}
+
+.nav-logo a:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  font-size: var(--font-size-lg);
   cursor: pointer;
-  color: #2d3748;
+  color: var(--color-text-primary);
+  transition: all var(--transition-normal);
+}
+
+.menu-toggle:hover {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
 }
 
 .nav-links {
@@ -39,28 +70,54 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: var(--space-sm);
 }
 
 .nav-links li a {
-  color: #4a5568;
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-normal);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
   display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  transition: left var(--transition-normal);
+  z-index: -1;
 }
 
 .nav-links li a:hover {
-  color: #2b6cb0;
-  background: rgba(43, 108, 176, 0.1);
+  color: var(--color-text-primary);
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-links li a:hover::before {
+  left: 0;
 }
 
 .nav-links li a.active {
-  color: #2b6cb0;
-  background: rgba(43, 108, 176, 0.15);
-  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(0, 212, 255, 0.15);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-glow);
+}
+
+.nav-links li a.active::before {
+  left: 0;
+  opacity: 0.2;
 }
 
 @media (max-width: 768px) {
@@ -73,14 +130,18 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--color-bg-secondary);
+    backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    transform: translateY(-20px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
+    gap: var(--space-md);
   }
 
   .nav-links-open {
@@ -90,6 +151,28 @@
   }
 
   .nav-links li {
-    margin: 0.5rem 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+  }
+
+  .nav-links li a:hover {
+    background: var(--color-bg-elevated);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .nav-links li a.active {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    border-color: var(--color-primary);
   }
 }

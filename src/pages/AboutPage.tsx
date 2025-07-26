@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import '../components/Portfolio.css';
+import './AboutPage.css';
 
 const AboutPage: React.FC = () => {
   const fadeInUp = {
@@ -17,6 +17,24 @@ const AboutPage: React.FC = () => {
     }
   };
 
+  const services = [
+    {
+      icon: "💻",
+      title: "Frontend Development",
+      description: "Creating responsive, interactive user interfaces with React, Vue, and modern CSS. Focus on performance, accessibility, and user experience."
+    },
+    {
+      icon: "⚙️",
+      title: "Backend Development", 
+      description: "Building robust APIs and server-side applications with Node.js, Python, and databases. Emphasis on scalability and security."
+    },
+    {
+      icon: "🚀",
+      title: "Full-Stack Solutions",
+      description: "End-to-end application development from concept to deployment. Integrating frontend and backend seamlessly."
+    }
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,7 +44,6 @@ const AboutPage: React.FC = () => {
     >
       <motion.section 
         className="about-section"
-        style={{ minHeight: '100vh', paddingTop: '120px' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -36,10 +53,10 @@ const AboutPage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '3rem' }}
           >
             About Me
           </motion.h1>
+          
           <div className="about-content">
             <motion.div 
               className="about-text"
@@ -63,6 +80,7 @@ const AboutPage: React.FC = () => {
                 best practices to deliver high-quality solutions.
               </p>
             </motion.div>
+            
             <motion.div 
               className="skills"
               initial={{ opacity: 0, x: 50 }}
@@ -80,35 +98,54 @@ const AboutPage: React.FC = () => {
                   <motion.span
                     key={skill}
                     variants={fadeInUp}
-                    whileHover={{ scale: 1.1, backgroundColor: "rgba(74, 144, 226, 0.1)" }}
+                    whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
                     {skill}
                   </motion.span>
                 ))}
               </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                style={{ marginTop: '2rem' }}
-              >
-                <h3>What I Do</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '1rem', padding: '1rem', background: '#f8f9fa', borderRadius: '8px' }}>
-                    <strong>Frontend Development:</strong> Creating responsive, interactive user interfaces with React, Vue, and modern CSS
-                  </li>
-                  <li style={{ marginBottom: '1rem', padding: '1rem', background: '#f8f9fa', borderRadius: '8px' }}>
-                    <strong>Backend Development:</strong> Building robust APIs and server-side applications with Node.js, Python, and databases
-                  </li>
-                  <li style={{ marginBottom: '1rem', padding: '1rem', background: '#f8f9fa', borderRadius: '8px' }}>
-                    <strong>Full-Stack Solutions:</strong> End-to-end application development from concept to deployment
-                  </li>
-                </ul>
-              </motion.div>
             </motion.div>
           </div>
+
+          {/* What I Do Section */}
+          <motion.div 
+            className="what-i-do"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <h3>What I Do</h3>
+            <div className="services-grid">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  className="service-card"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <span className="service-icon">{service.icon}</span>
+                  <h4 className="service-title">{service.title}</h4>
+                  <p className="service-description">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Quote Section */}
+          <motion.div 
+            className="quote-section"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+          >
+            <p className="quote-text">
+              Code is like humor. When you have to explain it, it's bad.
+            </p>
+            <p className="quote-author">- Cory House</p>
+          </motion.div>
         </div>
       </motion.section>
     </motion.div>
