@@ -7,16 +7,16 @@ describe('Portfolio', () => {
     render(<Portfolio />);
     
     expect(screen.getByRole('banner')).toBeInTheDocument(); // Header/Hero
-    expect(screen.getByText(/about/i)).toBeInTheDocument();
-    expect(screen.getByText(/projects/i)).toBeInTheDocument();
-    expect(screen.getByText(/contact/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'About Me' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Projects' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Get In Touch' })).toBeInTheDocument();
   });
 
   test('hero section has name and title', () => {
     render(<Portfolio />);
     
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-    expect(screen.getByText(/developer|engineer|designer/i)).toBeInTheDocument();
+    expect(screen.getByText('Full Stack Developer')).toBeInTheDocument();
   });
 
   test('projects section displays project cards', () => {
@@ -46,8 +46,8 @@ describe('Portfolio', () => {
   test('resume download link is present', () => {
     render(<Portfolio />);
     
-    const resumeLink = screen.getByRole('link', { name: /resume|download|cv/i });
-    expect(resumeLink).toBeInTheDocument();
-    expect(resumeLink).toHaveAttribute('href');
+    const resumeLinks = screen.getAllByRole('link', { name: /download resume/i });
+    expect(resumeLinks.length).toBeGreaterThan(0);
+    expect(resumeLinks[0]).toHaveAttribute('href', '/resume.pdf');
   });
 });
