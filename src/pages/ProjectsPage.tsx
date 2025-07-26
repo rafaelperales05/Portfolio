@@ -11,7 +11,7 @@ const ProjectsPage: React.FC = () => {
       title: "Personal Portfolio Website",
       description: "A modern, responsive portfolio website built with React and TypeScript featuring dark theme, smooth animations, and multi-page navigation. Showcases personal projects and professional experience.",
       technologies: ["React", "TypeScript", "Framer Motion", "React Router", "CSS3"],
-      githubUrl: "https://github.com/rafaelperales05/portfolio",
+      githubUrl: "https://github.com/rafaelperales05/Portfolio",
       liveUrl: "#",
       category: "frontend"
     },
