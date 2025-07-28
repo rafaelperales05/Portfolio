@@ -15,7 +15,6 @@ const Navigation: React.FC = () => {
 
   const navigationItems = [
     { anchor: '#hero', label: 'Home' },
-    { anchor: '#hero', label: 'About' },
     { anchor: '#projects', label: 'Projects' },
     { anchor: '#resume', label: 'Resume' },
     { anchor: '#contact', label: 'Contact' }
@@ -42,7 +41,7 @@ const Navigation: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <button onClick={() => scrollToSection('#hero')} style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', cursor: 'pointer' }}>RP</button>
+          <button onClick={() => scrollToSection('#hero')} style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', cursor: 'pointer', fontWeight: '600' }}>Rafael Perales</button>
         </motion.div>
         
         <motion.button 
@@ -102,7 +101,8 @@ const Navigation: React.FC = () => {
                     color: 'inherit', 
                     fontSize: 'inherit', 
                     cursor: 'pointer',
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    fontWeight: '600'
                   }}
                 >
                   {item.label}
