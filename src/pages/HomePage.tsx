@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 const HomePage: React.FC = () => {
@@ -91,8 +90,7 @@ const HomePage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link 
-                  to="/projects" 
+                <button 
                   className="btn btn-primary"
                   style={{ 
                     color: 'var(--text-primary)',
@@ -100,7 +98,7 @@ const HomePage: React.FC = () => {
                   }}
                 >
                   🚀 View My Work
-                </Link>
+                </button>
               </motion.div>
               <motion.a 
                 href="https://docs.google.com/document/d/1xbEcM3RewD0nwPSV-XJOu06UBAGxmEKQS2x7u8Kd4b0/edit?usp=sharing" 

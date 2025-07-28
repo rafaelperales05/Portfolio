@@ -1,14 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const location = useLocation();
-
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -32,7 +29,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <motion.div
-      key={location.pathname}
       initial="initial"
       animate="in"
       exit="out"

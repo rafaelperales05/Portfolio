@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,18 +14,19 @@ const Navigation: React.FC = () => {
   };
 
   const navigationItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/resume', label: 'Resume' },
-    { path: '/contact', label: 'Contact' }
+    { anchor: '#hero', label: 'Home' },
+    { anchor: '#hero', label: 'About' },
+    { anchor: '#projects', label: 'Projects' },
+    { anchor: '#resume', label: 'Resume' },
+    { anchor: '#contact', label: 'Contact' }
   ];
 
-  const isActivePage = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/';
+  const scrollToSection = (anchor: string) => {
+    const element = document.querySelector(anchor);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    return location.pathname.startsWith(path);
+    closeMenu();
   };
 
   return (
@@ -43,7 +42,7 @@ const Navigation: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <Link to="/">RP</Link>
+          <button onClick={() => scrollToSection('#hero')} style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', cursor: 'pointer' }}>RP</button>
         </motion.div>
         
         <motion.button 
@@ -79,9 +78,9 @@ const Navigation: React.FC = () => {
             }
           }}
         >
-          {navigationItems.map((item) => (
+          {navigationItems.map((item, index) => (
             <motion.li 
-              key={item.path}
+              key={index}
               variants={{
                 open: { opacity: 1, y: 0 },
                 closed: { opacity: 1, y: 0 }
@@ -95,13 +94,19 @@ const Navigation: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link 
-                  to={item.path} 
-                  onClick={closeMenu}
-                  className={isActivePage(item.path) ? 'active' : ''}
+                <button 
+                  onClick={() => scrollToSection(item.anchor)}
+                  style={{ 
+                    background: 'none', 
+                    border: 'none', 
+                    color: 'inherit', 
+                    fontSize: 'inherit', 
+                    cursor: 'pointer',
+                    textDecoration: 'none'
+                  }}
                 >
                   {item.label}
-                </Link>
+                </button>
               </motion.div>
             </motion.li>
           ))}
