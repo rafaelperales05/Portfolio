@@ -10,16 +10,15 @@ const ResumeSection: React.FC = () => {
 
   const experience = [
     {
-      title: "Early Business Analyst Intern",
+      title: "Early Machine Learning Innovation Intern",
       company: "Capital One",
-      location: "Mcclean, Virginia",
+      location: "McLean, Virginia",
       period: "June 2025 - August 2025",
       description: "Built machine learning models for credit card forecasting and enhanced decision-making processes through data analysis and model optimization.",
       achievements: [
-        "Built an early-stage machine learning model in Python with scikit-learn to reforecast 24th credit card statement-level metrics using the first 6 months of customer data",
-        "Increased previous model R² by 20% and decreased monthly relative mean error by 10%",
-        "Extracted, cleaned, and joined large-scale datasets from Snowflake using SQL for feature engineering, model training, and validation",
-        "Performed exploratory data analysis and developed visualizations in Jupyter Notebooks and Google Sheets to uncover behavioral trends and creditworthiness indicators"
+        "Built a machine learning model in Python using scikit-learn and pandas to reforecast credit card statement-level metrics, improving customer statement monthly metrics prediction accuracy by 10%",
+        "Created data visualizations using seaborn and matplot through Jupyter Notebooks and Google Sheets, enabling stakeholder insights into creditworthiness indicators and customer trends",
+        "Collaborated with cross functional teams to deliver $5-10M NPV impact through potential model deployment and integration"
       ]
     },
     {
@@ -38,24 +37,35 @@ const ResumeSection: React.FC = () => {
 
   const leadership = [
     {
-      title: "Electrical Lead",
+      title: "Computer Engineering / Data Lead",
       organization: "NASA L'SPACE Research Team",
       period: "Jan 2025 - Present",
-      description: "Led electrical systems design and development for innovative solar sail technology research project.",
+      description: "Lead data analyst for solar sail technology research project, conducting literature review and proof of concept development.",
       achievements: [
-        "Conducted a literature review to form initial proof of concepts for improving current solar sail technology",
-        "Collaborated with 6 other leads to create weekly meeting and event agendas"
+        "Lead data analyst for solar sail technology research project, conducting literature review and proof of concept development",
+        "Collaborated with a 6 person interdisciplinary team to deliver weekly presentations and technical documentation",
+        "Applied engineering principles and data science techniques to evaluate and optimize energy consumption for solar sail systems"
       ]
     },
     {
-      title: "Member",
+      title: "Co-Developer",
+      organization: "\"Retro Bowl\" Remake Project",
+      period: "January 2024 - May 2024",
+      description: "Developed an embedded application recreating \"Retro Bowl\" game on a MSP430 microcontroller using C programming and object-oriented design patterns.",
+      achievements: [
+        "Developed an embedded application recreating \"Retro Bowl\" game on a MSP430 microcontroller using C programming and object-oriented design patterns",
+        "Designed and implemented PCB using KiCAD, integrating ADC joystick, LED displays, buttons, and ST7735R LCD screen with optimized hardware-software interface",
+        "Built real-time system architecture using state machines, timers, interrupts, and priority scheduling to handle game logic, user input, and audio output"
+      ]
+    },
+    {
+      title: "General Member",
       organization: "Society of Hispanic Professional Engineers (SHPE)",
       period: "August 2024 - Present",
       description: "Active participant in professional development and engineering career advancement initiatives.",
       achievements: [
-        "Participate in technical workshops and engineering career development programs",
-        "Engage with industry professionals and alumni network to gain insights into engineering careers",
-        "Contribute to community outreach programs promoting STEM education in underrepresented communities"
+        "Engaged in networking events and professional workshops to develop career readiness and expand professional network",
+        "Participated in mentorship programs, enhancing knowledge in professional industries"
       ]
     }
   ];
@@ -71,7 +81,7 @@ const ResumeSection: React.FC = () => {
 
   const skills = {
     "Programming Languages": ["C", "C++", "Python", "SQL"],
-    "Tools & Technologies": ["Jupyter Notebooks", "Snowflake", "Git", "Github", "KiCAD", "LTSPICE", "scikit-learn"],
+    "Tools & Technologies": ["Jupyter Notebooks", "Snowflake", "Git", "Github", "KiCAD", "LTSPICE", "scikit-learn", "pandas", "seaborn", "matplotlib", "prompt/context engineering"],
     "Software": ["Google Suite (Sheets, Slides)", "Microsoft Suite (Excel, PowerPoint)"]
   };
 
@@ -404,6 +414,26 @@ const ResumeSection: React.FC = () => {
               </h4>
               <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                 Basketball • Trumpet Playing • Data Science & Advancing Technology • Music • FinTech
+              </p>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05, y: -5 }}
+              style={{
+                padding: '2rem',
+                background: 'var(--glass-bg)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                border: '1px solid var(--glass-border)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+                textAlign: 'center'
+              }}
+            >
+              <h4 style={{ color: 'var(--accent-primary)', marginBottom: '1rem', fontSize: '1.3rem' }}>
+                🌐 Languages
+              </h4>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                Conversational Spanish • Fluent English
               </p>
             </motion.div>
 
