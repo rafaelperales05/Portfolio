@@ -16,24 +16,6 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 2,
-      title: "Personal Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and TypeScript featuring dark theme, smooth animations, and single-page navigation. Showcases personal projects and professional experience.",
-      technologies: ["React", "TypeScript", "Framer Motion", "CSS3", "Responsive Design"],
-      githubUrl: "https://github.com/rafaelperales05/Portfolio",
-      liveUrl: "#",
-      category: "frontend"
-    },
-    {
-      id: 3,
-      title: "Retro Bowl Remake",
-      description: "Recreation of the popular football game on MSMP0+ microcontroller hardware using embedded C programming. Features PCB design, joystick controls, LED displays, and sound generation. (wasn't using git at the time :()",
-      technologies: ["C", "KiCAD", "Embedded Systems", "Hardware Design", "State Machines"],
-      githubUrl: "#",
-      liveUrl: "https://youtu.be/C3qR12QKr7w",
-      category: "hardware"
-    },
-    {
-      id: 4,
       title: "YouTube/Reddit Comment Sentiment Analysis",
       description: "Engineered MLOps sentiment pipeline using DVC, NLTK, and LightGBM (78% accuracy), with MLflow tracking and automated model promotion to staging. Deployed Flask API and Chrome extension for real-time analysis with interactive visualizations.",
       technologies: ["Python", "DVC", "NLTK", "LightGBM", "MLflow", "Flask", "Chrome Extension", "Docker", "AWS", "CI/CD"],
@@ -42,13 +24,22 @@ const ProjectsSection: React.FC = () => {
       category: "datascience"
     },
     {
-      id: 5,
-      title: "Solar Sail Technology Research",
-      description: "Leading electrical systems design for NASA L'SPACE research team, focusing on innovative solar sail technology improvements and electrical power systems development.",
-      technologies: ["Research", "Electrical Engineering", "Team Leadership", "System Design"],
+      id: 3,
+      title: "Retro Bowl Remake",
+      description: "Recreation of the popular football game on MSMP0+ microcontroller hardware using embedded C programming. Features PCB design, joystick controls, LED displays, and sound generation.",
+      technologies: ["C", "KiCAD", "Embedded Systems", "Hardware Design", "State Machines"],
       githubUrl: "#",
+      liveUrl: "https://youtu.be/C3qR12QKr7w",
+      category: "hardware"
+    },
+    {
+      id: 4,
+      title: "Personal Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and TypeScript featuring dark theme, smooth animations, and single-page navigation. Showcases personal projects and professional experience.",
+      technologies: ["React", "TypeScript", "Framer Motion", "CSS3", "Responsive Design"],
+      githubUrl: "https://github.com/rafaelperales05/Portfolio",
       liveUrl: "#",
-      category: "research"
+      category: "frontend"
     }
   ];
 
@@ -56,8 +47,7 @@ const ProjectsSection: React.FC = () => {
     { id: 'all', label: 'All Projects' },
     { id: 'frontend', label: 'Frontend' },
     { id: 'datascience', label: 'Data Science' },
-    { id: 'hardware', label: 'Hardware' },
-    { id: 'research', label: 'Research' }
+    { id: 'hardware', label: 'Hardware' }
   ];
 
   const filteredProjects = selectedCategory === 'all' 
@@ -175,9 +165,10 @@ const ProjectsSection: React.FC = () => {
           layout
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '2rem',
-            marginBottom: '4rem'
+            maxWidth: '1200px',
+            margin: '0 auto 4rem auto'
           }}
         >
           {filteredProjects.map((project, index) => (
@@ -224,40 +215,6 @@ const ProjectsSection: React.FC = () => {
                   {project.description}
                 </p>
                 
-                {/* Technologies used - skills integrated with project */}
-                <motion.div 
-                  className="project-technologies"
-                  variants={staggerContainer}
-                  initial="initial"
-                  animate="animate"
-                  style={{ 
-                    display: 'flex', 
-                    flexWrap: 'wrap', 
-                    gap: '0.5rem',
-                    marginBottom: '1.5rem'
-                  }}
-                >
-                  {project.technologies.map(tech => (
-                    <motion.span 
-                      key={tech} 
-                      className="tech-tag"
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.2 }}
-                      style={{
-                        padding: '0.5rem 1rem',
-                        background: 'rgba(0, 212, 255, 0.1)',
-                        border: '1px solid var(--accent-primary)',
-                        borderRadius: '20px',
-                        color: 'var(--text-primary)',
-                        fontSize: '0.9rem',
-                        fontWeight: '500'
-                      }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </motion.div>
                 
                 <div className="project-links" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
                   {project.githubUrl !== "#" && (
@@ -265,17 +222,17 @@ const ProjectsSection: React.FC = () => {
                       href={project.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="btn-secondary"
+                      className="btn-primary"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       style={{ 
                         flex: 1, 
                         textAlign: 'center',
                         padding: '0.75rem 1.5rem',
-                        background: 'transparent',
-                        border: '2px solid var(--accent-primary)',
+                        background: 'var(--gradient-primary)',
+                        border: 'none',
                         borderRadius: '8px',
-                        color: 'var(--text-primary)',
+                        color: 'var(--bg-primary)',
                         textDecoration: 'none',
                         fontWeight: '600',
                         transition: 'all 0.3s ease'
