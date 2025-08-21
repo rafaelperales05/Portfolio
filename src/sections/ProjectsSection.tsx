@@ -34,6 +34,15 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 4,
+      title: "YouTube/Reddit Comment Sentiment Analysis",
+      description: "Engineered MLOps sentiment pipeline using DVC, NLTK, and LightGBM (78% accuracy), with MLflow tracking and automated model promotion to staging. Deployed Flask API and Chrome extension for real-time analysis with interactive visualizations.",
+      technologies: ["Python", "DVC", "NLTK", "LightGBM", "MLflow", "Flask", "Chrome Extension", "Docker", "AWS", "CI/CD"],
+      githubUrl: "https://github.com/rafaelperales05/Comment-Sentiment-Analysis",
+      liveUrl: "#",
+      category: "datascience"
+    },
+    {
+      id: 5,
       title: "Solar Sail Technology Research",
       description: "Leading electrical systems design for NASA L'SPACE research team, focusing on innovative solar sail technology improvements and electrical power systems development.",
       technologies: ["Research", "Electrical Engineering", "Team Leadership", "System Design"],

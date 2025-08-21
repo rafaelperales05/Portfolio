@@ -37,6 +37,16 @@ const ResumeSection: React.FC = () => {
 
   const leadership = [
     {
+      title: "Electrical and Computer Engineering Amplify Mentor",
+      organization: "University of Texas at Austin",
+      period: "August 2025 - Present",
+      description: "Mentored a pod of second-year ECE students, helping mentees strengthen study habits, build professional skills, and secure internship opportunities.",
+      achievements: [
+        "Mentored a pod of second-year ECE students, helping mentees strengthen study habits, build professional skills, and secure internship opportunities",
+        "Facilitated networking with peers, faculty, and alumni, fostering lasting academic support systems and career connections"
+      ]
+    },
+    {
       title: "Computer Engineering / Data Lead",
       organization: "NASA L'SPACE Research Team",
       period: "Jan 2025 - Present",

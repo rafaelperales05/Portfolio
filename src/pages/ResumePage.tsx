@@ -39,6 +39,16 @@ const ResumePage: React.FC = () => {
 
   const leadership = [
     {
+      title: "Electrical and Computer Engineering Amplify Mentor",
+      organization: "University of Texas at Austin",
+      period: "August 2025 - Present",
+      description: "Mentored a pod of second-year ECE students, helping mentees strengthen study habits, build professional skills, and secure internship opportunities.",
+      achievements: [
+        "Mentored a pod of second-year ECE students, helping mentees strengthen study habits, build professional skills, and secure internship opportunities",
+        "Facilitated networking with peers, faculty, and alumni, fostering lasting academic support systems and career connections"
+      ]
+    },
+    {
       title: "Electrical Lead",
       organization: "NASA L'SPACE Research Team",
       period: "Jan 2025 - Present",
@@ -63,6 +73,16 @@ const ResumePage: React.FC = () => {
   ];
 
   const projects = [
+    {
+      title: "YouTube/Reddit Comment Sentiment Analysis Project",
+      period: "June 2025 - August 2025",
+      description: "Engineered MLOps sentiment pipeline using DVC, NLTK, and LightGBM (78% accuracy), with MLflow tracking and automated model promotion to staging.",
+      achievements: [
+        "Engineered MLOps sentiment pipeline using DVC, NLTK, and LightGBM (78% accuracy), with MLflow tracking and automated model promotion to staging",
+        "Deployed Flask API and Chrome extension for real-time YouTube comment analysis with interactive visualizations (sentiment charts, word clouds, trending topics)",
+        "Implemented CI/CD with GitHub Actions and AWS, automating Docker containerization and EC2 deployment for continuous delivery"
+      ]
+    },
     {
       title: "\"Retro Bowl\" Remake Project",
       period: "January 2024 - May 2024",
